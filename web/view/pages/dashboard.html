@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/resources/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <script src="../../assets/resources/jquery/jquery-3.4.1.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../../../assets/libraries/materialize/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../../../assets/libraries/materialize/css/materialize.css"  media="screen,projection"/>
+    
+    <link type="text/css" rel="stylesheet" href="../../../assets/resources/styles/style.css"  media="screen,projection"/>
+
+    <link rel="icon" type="image/png" href="../../assets/resources/images/Logo 28px.png"/>
+    <title>Administração | Gestor</title>
+
+    <script>
+        $(function () {
+            $("#footer").load("../layout/footer.html");
+        });
+    </script>
+
+
+</head>
+
+<body id="dashboard-body" class="admin-body">
+
+    <nav>
+        <div class="my-navbar row">
+            <div class="col s4">
+                <a href="dashboard.html">
+                    <img src="../../assets/resources/images/Logo 28px - preta.png" alt="Logo Yuugen Sushi">
+                </a>
+            </div>
+            <div class="col s4 title">Gestor de pedidos</div>
+            <div class="admin-menu col s4">
+
+                <a class="dropdown-trigger" data-target='dropdown-menu' href="#">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                </a>
+
+
+                <ul id='dropdown-menu' class='dropdown-content'>
+                    <li><a href="dashboard.html">Gestor de pedidos</a></li>
+                    <li><a href="dishes.html">Pratos cadastrados</a></li>
+                    <li><a href="report.html">Relatório de lucro</a></li>
+                    <li><a href="#!">Sair</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="row">
+            <div class="col"></div>
+
+            <div id="orders-table" class="col s12 m7">
+                <table class="striped">
+                    <thead>
+                        <tr>
+                            <th class="">Id pedido</th>
+                            <th class="">Cliente</th>
+                            <th class="">Telefone</th>
+                            <th class="">Hora do pedido</th>
+                            <th class="">Entregar até</th>
+                            <th class="">Situação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1456</td>
+                            <td>Beatriz de Almeida Fernandes</td>
+                            <td>(42) 99977-8562</td>
+                            <td>18:47</td>
+                            <td>18:47</td>
+                            <td>
+                                <div class="status pendant" id="1">Pendente</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1456</td>
+                            <td>Beatriz de Almeida Fernandes</td>
+                            <td>(42) 99977-8562</td>
+                            <td>18:47</td>
+                            <td>18:47</td>
+                            <td>
+                                <div class="status getting-ready" id="2">Em preparo</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1456</td>
+                            <td>Beatriz de Almeida Fernandes</td>
+                            <td>(42) 99977-8562</td>
+                            <td>18:47</td>
+                            <td>18:47</td>
+                            <td>
+                                <div class="status sent" id="3">Enviado</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1456</td>
+                            <td>Beatriz de Almeida Fernandes</td>
+                            <td>(42) 99977-8562</td>
+                            <td>18:47</td>
+                            <td>18:47</td>
+                            <td>
+                                <div class="status delivered" id="4">Entregue</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+
+            <div id="order" class="col s12 m4">
+                <div class="infos">
+                    <div class="status pendant">Pendente</div>
+                    <div class="info-square order">
+                        <header>
+                                Pedido #1456
+                        </header>
+                        <main>
+                            <p id="order-time" >Horário do pedido</p>
+                            <p id="oreder-deadline">Prazo estipulado</p>
+                        </main>
+                    </div>
+
+                    <div class="info-square client">
+                        <header>
+                            Cliente
+                        </header>
+                        <main>
+                            <p id="name" >Beatriz de Almeida Fernandes</p>
+                            <p id="phone">(42) 99977-8562</p>
+                        </main>
+                    </div>
+
+                    <div class="info-square address">
+                        <header>
+                            Endereço de entrega
+                        </header>
+                        <main>
+                            <p id="street" >Rua Emília F. da Cruz</p>
+                            <p id="cep">85015-633</p>
+                        </main>
+                    </div>
+
+                    <div class="info-square order-items">
+                        <header>
+                            Itens do pedido
+                        </header>
+                        <main>
+                            <div class="order-items">
+                                <div id="item1">
+                                    <p id="item-name">Sushi</p>
+                                    <span id="item-price">R$ 20,00</span>
+                                </div>
+                                <div id="item1">
+                                    <p id="item-name">Sushi</p>
+                                    <span id="item-price">R$ 20,00</span>
+                                </div>
+                            </div>
+                            <div class="price">
+                                <div class="subtotal">
+                                    <p>Subtotal</p>
+                                    <span>R$ 40,00</span>
+                                </div>
+                                <div class="shipping">
+                                    <p>Taxa de entrega</p>
+                                    <span>R$ 10,00</span>
+                                </div>
+                                <div class="total">
+                                    <p>Total</p>
+                                    <span>R$ 50,00</span>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+
+                    <div class="info-square payment">
+                        <header>
+                            Forma de pagamento
+                        </header>
+                        <main>
+                            <p id="payment-choice">Dinheiro</p>
+                        </main>
+                    </div>
+                </div>
+                <div class="my-btn pendant-btn">
+                    <a href="#">
+                        <button type="button">
+                            Confirmar leitura
+                        </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <div id="footer"></div>
+
+    <script>
+        $(document).ready(function(){
+            $('.modal').modal();
+            $('.dropdown-trigger').dropdown();
+        });
+
+    </script>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="../../../assets/libraries/materialize/js/materialize.min.js"></script>
+</body>
+</html>

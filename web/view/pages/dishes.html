@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="../../assets/resources/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+
+    <script src="../../assets/resources/jquery/jquery-3.4.1.js"></script>
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../../assets/libraries/materialize/css/materialize.min.css"
+      media="screen,projection"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../../assets/libraries/materialize/css/materialize.css"
+      media="screen,projection"
+    />
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../../assets/resources/styles/style.css"
+      media="screen,projection"
+    />
+
+    <link rel="icon" type="image/png" href="../../assets/resources/images/Logo 28px.png"/>
+    <title>Administração | Pratos</title>
+
+    <script>
+      $(function () {
+        $("#footer").load("../layout/footer.html");
+      });
+    </script>
+
+  </head>
+
+  <body id="dishes-body" class="admin-body">
+    <nav>
+      <div class="my-navbar row">
+        <div class="col s4">
+          <a href="dashboard.html">
+            <img
+              src="../../assets/resources/images/Logo 28px - preta.png"
+              alt="Logo Yuugen Sushi"
+            />
+          </a>
+        </div>
+        <div class="col s4 title">Pratos cadastrados</div>
+        <div class="admin-menu col s4">
+          <a class="dropdown-trigger" data-target="dropdown-menu">
+            <i class="fa fa-user" aria-hidden="true"></i>
+          </a>
+
+          <ul id="dropdown-menu" class="dropdown-content">
+            <li><a href="dashboard.html">Gestor de pedidos</a></li>
+            <li><a href="dishes.html">Pratos cadastrados</a></li>
+            <li><a href="report.html">Relatório de lucro</a></li>
+            <li><a href="#!">Sair</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+        <div class="row">
+            <div class="col m1"></div>
+            <div class="col s12 m10">
+                <div class="row filters">
+                    <div class="col s12 m4">
+                        <div class="my-search col s11">
+                            <form method="get">
+                            <input placeholder="Buscar">
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="input-field col s12">
+                            <select>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="1">Sushis</option>
+                            <option value="2">Sashimis</option>
+                            <option value="3">Combinados</option>
+                            <option value="4">Temakis</option>
+                            </select>
+                            <label>Filtrar por</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="input-field col s12">
+                            <select>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="1">Maior preço</option>
+                            <option value="2">Menor preço</option>
+                            </select>
+                            <label>Ordenar por</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col m1"></div>
+        </div>
+        
+        <div class="row">
+            <div class="col m1"></div>
+            <div class="col s12 m10">
+                <div class="row">
+                  <div class="col s12 m6 l3">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="../../assets/resources/images/sushi.jpg" />
+                        <span class="card-title">Sushi</span>
+                      </div>
+                      <div class="card-content">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis justo a.
+                        </p>
+                      </div>
+                      <div class="card-action">
+                          <ul>
+                            <li>
+                              <p>R$ 20,00</p>
+                            </li>
+                            <li>
+                              <a class="modal-trigger" href="#modal-edit-dish">
+                                <i class="material-icons">edit</i>
+                              </a>
+                            </li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col s12 m6 l3">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="../../assets/resources/images/sushi.jpg" />
+                        <span class="card-title">Sushi</span>
+                      </div>
+                      <div class="card-content">
+                        <p>
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis justo a.
+                        </p>
+                      </div>
+                      <div class="card-action">
+                          <ul>
+                            <li>
+                              <p>R$ 20,00</p>
+                            </li>
+                            <li>
+                              <a class="modal-trigger" href="#modal-edit-dish">
+                                <i class="material-icons">edit</i>
+                              </a>
+                            </li>
+                          </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col s12 m6 l3">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="../../assets/resources/images/sushi.jpg" />
+                        <span class="card-title">Sushi</span>
+                      </div>
+                      <div class="card-content">
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis justo a.
+                        </p>
+                      </div>
+                      <div class="card-action">
+                        <ul>
+                          <li>
+                            <p>R$ 20,00</p>
+                          </li>
+                          <li>
+                            <a class="modal-trigger" href="#modal-edit-dish">
+                              <i class="material-icons">edit</i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col s12 m6 l3">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="../../assets/resources/images/sushi.jpg" />
+                        <span class="card-title">Sushi</span>
+                      </div>
+                      <div class="card-content">
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis justo a.
+                        </p>
+                      </div>
+                      <div class="card-action">
+                        <ul>
+                          <li>
+                            <p>R$ 20,00</p>
+                          </li>
+                          <li>
+                            <a class="modal-trigger" href="#modal-edit-dish">
+                              <i class="material-icons">edit</i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col s12 m6 l3">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="../../assets/resources/images/sushi.jpg" />
+                        <span class="card-title">Sushi</span>
+                      </div>
+                      <div class="card-content">
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis justo a.
+                        </p>
+                      </div>
+                      <div class="card-action">
+                        <ul>
+                          <li>
+                            <p>R$ 20,00</p>
+                          </li>
+                          <li>
+                            <a class="modal-trigger" href="#modal-edit-dish">
+                              <i class="material-icons">edit</i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col s12 m6 l3">
+                    <div class="card">
+                      <div class="card-image">
+                        <img src="../../assets/resources/images/sushi.jpg" />
+                        <span class="card-title">Sushi</span>
+                      </div>
+                      <div class="card-content">
+                        <p>
+                          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis justo a.
+                        </p>
+                      </div>
+                      <div class="card-action">
+                        <ul>
+                          <li>
+                            <p>R$ 20,00</p>
+                          </li>
+                          <li>
+                            <a class="modal-trigger" href="#modal-edit-dish">
+                              <i class="material-icons">edit</i>
+                            </a>
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </div>
+            <div class="col m1"></div>
+        </div>
+      <div class="row">
+        <div class="col s12 pag">
+          <ul class="pagination">
+            <li class="disabled">
+              <a href="#!"><i class="material-icons">chevron_left</i></a>
+            </li>
+            <li class="active"><a href="#!">1</a></li>
+            <li class="waves-effect"><a href="#!">2</a></li>
+            <li class="waves-effect"><a href="#!">3</a></li>
+            <li class="waves-effect"><a href="#!">4</a></li>
+            <li class="waves-effect"><a href="#!">5</a></li>
+            <li class="waves-effect">
+              <a href="#!"><i class="material-icons">chevron_right</i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="fixed-action-btn">
+        <a class="btn-floating btn-large green modal-trigger" href="#modal-dishes">
+          <i class="large material-icons">add</i>
+        </a>
+      </div>
+      
+    </main>
+
+    <div id="footer"></div>
+
+    <div id="modal-dishes" class="modal">
+        <div class="modal-content">
+            <div id="close">
+                <a href="#!" class="modal-close waves-effect waves-green btn-flat">
+                    <i class="material-icons">close</i>
+                </a>
+            </div>
+            <header>
+                <p>Cadastrar novo prato</p>
+            </header>
+            <main>
+                <form action="">
+                    <input class="my-input" type="text" name="name" id="name" placeholder="Nome do prato">
+                    <label for="name" class="my-label">Nome</label>
+
+                    <input class="my-input" type="text" name="price" placeholder="Qual o preço?">
+                    <label for="price" class="my-label">Preço</label>
+
+                    <input class="my-input" type="text" name="description" placeholder="Descrição do prato">
+                    <label for="description" class="my-label">Descrição</label>
+
+                    <input class="my-input" type="tel" name="imagem" placeholder="Importar imagem">
+                    <label for="imagem" class="my-label">Importar imagem</label>
+                    <footer>
+                        <a href="">     
+                            <button type="button">
+                                CADASTRAR
+                            </button>
+                        </a>
+                    </footer>
+                </form>
+            </main>
+        </div>
+    </div>
+
+    <div id="modal-edit-dish" class="modal">
+      <div class="modal-content">
+          <div id="close">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">
+                  <i class="material-icons">close</i>
+              </a>
+          </div>
+          <header>
+              <p>Editar prato</p>
+          </header>
+          <main>
+              <form action="">
+                  <input class="my-input" type="text" name="name" id="name" value="Sushi">
+                  <label for="name" class="my-label">Nome</label>
+
+                  <input class="my-input" type="text" name="price" value="R$ 20,00">
+                  <label for="price" class="my-label">Preço</label>
+
+                  <input class="my-input" type="text" name="description" value="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis justo a.">
+                  <label for="description" class="my-label">Descrição</label>
+
+                  <input class="my-input" type="tel" name="imagem" value="img.png">
+                  <label for="imagem" class="my-label">Importar imagem</label>
+                  <footer>
+                      <a href="">     
+                          <button type="button">
+                              SALVAR
+                          </button>
+                      </a>
+                  </footer>
+              </form>
+          </main>
+      </div>
+  </div>
+    <script>
+        $(document).ready(function () {
+            $(".modal").modal();
+            $(".dropdown-trigger").dropdown();
+            $('select').formSelect();
+        });
+    </script>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script
+      type="text/javascript"
+      src="../../../assets/libraries/materialize/js/materialize.min.js"
+    ></script>
+  </body>
+</html>

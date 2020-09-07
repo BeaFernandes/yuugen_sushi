@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="./../../assets/resources/font-awesome-4.7.0/css/font-awesome.min.css"
+    />
+
+    <script src="./../../assets/resources/jquery/jquery-3.4.1.js"></script>
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./../../../assets/libraries/materialize/css/materialize.min.css"
+      media="screen,projection"
+    />
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="./../../../assets/libraries/materialize/css/materialize.css"
+      media="screen,projection"
+    />
+
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="../../../assets/resources/styles/style.css"
+      media="screen,projection"
+    />
+
+    <link rel="icon" type="image/png" href="./../../assets/resources/images/Logo 28px.png"/>
+    <title>Cardápio | Yuugen Sushi</title>
+
+    <script>
+      $(function () {
+        $("#footer").load("./../layout/footer.html");
+      });
+
+    </script>
+
+  </head>
+
+  <body id="food-menu-body">
+    <nav>
+      <div class="my-navbar row">
+        <div class="col s2 m4">
+          <a href="../../public/index.html">
+            <img
+              src="../../assets/resources/images/Logo 28px - preta.png"
+              alt="Logo Yuugen Sushi"
+            />
+          </a>
+        </div>
+        <div class="title col s9 m4">
+          Cardápio
+        </div>
+        <div class="options col s1 m4">
+          <ul id="nav-mobile" class="right hide-on-med-and-down">
+            <li class="waves-effect">
+              <a class="modal-trigger" href="#modal-basket">
+                <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                Cestinha
+              </a>
+            </li>
+
+            <li class="waves-effect">
+              <a class="modal-trigger" href="#modal-signin">
+                <i class="fa fa-user" aria-hidden="true"></i>
+                Entrar
+              </a>
+            </li>
+
+
+            <!--Será exibido apenas quando o usuário estiver logado-->
+            <li>
+              <div class="signed-in">
+                <a class="dropdown-trigger" data-target="dropdown-menu">
+                  <i class="fa fa-user" aria-hidden="true"></i>
+                  Beatriz
+                </a>
+      
+                <ul id="dropdown-menu" class="dropdown-content">
+                  <li><a href="orders.html">Meus pedidos</a></li>
+                  <li><a class="modal-trigger" href="#modal-edit-user">Editar perfil</a></li>
+                  <li><a href="#!">Sair</a></li>
+                </ul>
+              </div>
+            </li>
+          </ul>
+          <a href="#" data-target="slide-out" class="sidenav-trigger  show-on-medium-and-down"><i class="material-icons">menu</i></a>
+        </div>
+      </div>
+    </nav>
+
+    <ul id="slide-out" class="sidenav">
+      <li class="waves-effect">
+        <a class="modal-trigger" href="#modal-basket">
+          <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+          Cestinha
+        </a>
+      </li>
+
+      <li class="waves-effect">
+        <a class="modal-trigger" href="#modal-signin">
+          <i class="fa fa-user" aria-hidden="true"></i>
+          Entrar
+        </a>
+      </li>
+    </ul>
+    <main>
+      <div class="row">
+        <div class="col"></div>
+        <div class="col"></div>
+        <div id="food-menu" class="col s12 m7">
+          
+        <div class="row">
+            <div class="col s12">
+                <div class="row filters">
+                  <div class="col s12 m4">
+                      <div class="my-search col s11">
+                          <form method="get">
+                          <input placeholder="Buscar">
+                          </form>
+                      </div>
+                  </div>
+                    <div class="col s12 m4">
+                        <div class="input-field col s12">
+                            <select>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="1">Sushis</option>
+                            <option value="2">Sashimis</option>
+                            <option value="3">Combinados</option>
+                            <option value="4">Temakis</option>
+                            </select>
+                            <label>Filtrar por</label>
+                        </div>
+                    </div>
+                    <div class="col s12 m4">
+                        <div class="input-field col s12">
+                            <select>
+                            <option value="" disabled selected>Selecione</option>
+                            <option value="1">Maior preço</option>
+                            <option value="2">Menor preço</option>
+                            </select>
+                            <label>Ordenar por</label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>  
+          <div class="row">
+            <div class="col s12 m6 l3">
+              <div class="card">
+                <div class="card-image">
+                  <img src="../../assets/resources/images/sushi.jpg" />
+                  <span class="card-title">Card Title</span>
+                </div>
+                <div class="card-content">
+                  <p>I am a very simple card.</p>
+                </div>
+                <div class="card-action">
+                  <ul>
+                    <li>
+                      <p>R$ 20,00</p>
+                    </li>
+                    <li>
+                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 l3">
+              <div class="card">
+                <div class="card-image">
+                  <img src="../../assets/resources/images/sushi.jpg" />
+                  <span class="card-title">Card Title</span>
+                </div>
+                <div class="card-content">
+                  <p>I am a very simple card.</p>
+                </div>
+                <div class="card-action">
+                  <ul>
+                    <li>
+                      <p>R$ 20,00</p>
+                    </li>
+                    <li>
+                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 l3">
+              <div class="card">
+                <div class="card-image">
+                  <img src="../../assets/resources/images/sushi.jpg" />
+                  <span class="card-title">Card Title</span>
+                </div>
+                <div class="card-content">
+                  <p>I am a very simple card.</p>
+                </div>
+                <div class="card-action">
+                  <ul>
+                    <li>
+                      <p>R$ 20,00</p>
+                    </li>
+                    <li>
+                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="col s12 m6 l3">
+              <div class="card">
+                <div class="card-image">
+                  <img src="../../assets/resources/images/sushi.jpg" />
+                  <span class="card-title">Card Title</span>
+                </div>
+                <div class="card-content">
+                  <p>I am a very simple card.</p>
+                </div>
+                <div class="card-action">
+                  <ul>
+                    <li>
+                      <p>R$ 20,00</p>
+                    </li>
+                    <li>
+                      <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col s12 pag">
+            <ul class="pagination">
+              <li class="disabled">
+                <a href="#!"><i class="material-icons">chevron_left</i></a>
+              </li>
+              <li class="active"><a href="#!">1</a></li>
+              <li class="waves-effect"><a href="#!">2</a></li>
+              <li class="waves-effect"><a href="#!">3</a></li>
+              <li class="waves-effect"><a href="#!">4</a></li>
+              <li class="waves-effect"><a href="#!">5</a></li>
+              <li class="waves-effect">
+                <a href="#!"><i class="material-icons">chevron_right</i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="col"></div>
+        <div id="basket" class="col s12 m4">
+          <header>
+            <h5>Cestinha (2)</h5>
+          </header>
+          <h6>Seu pedido</h6>
+          <main>
+            <ul class="basket-items">
+              <li>
+                <hr />
+                <header>
+                  <ul>
+                    <li>
+                      <p>Sushi</p>
+                    </li>
+                    <li>
+                      <span>R$ 20,00</span>
+                    </li>
+                  </ul>
+                </header>
+                <main>
+                  <p>
+                    Loren ipsun alo teste um dois. Loren ipsun alo teste um
+                    dois.
+                  </p>
+                </main>
+                <footer>
+                  <ul>
+                    <li class="add">
+                      <i class="material-icons">add_circle_outline</i>
+                    </li>
+                    <li>1</li>
+                    <li class="remove">
+                      <i class="material-icons">remove_circle_outline</i>
+                    </li>
+                  </ul>
+                </footer>
+              </li>
+              <li>
+                <hr />
+                <header>
+                  <ul>
+                    <li>
+                      <p>Sushi</p>
+                    </li>
+                    <li>
+                      <span>R$ 20,00</span>
+                    </li>
+                  </ul>
+                </header>
+                <main>
+                  <p>
+                    Loren ipsun alo teste um dois. Loren ipsun alo teste um
+                    dois.
+                  </p>
+                </main>
+                <footer>
+                  <ul>
+                    <li class="add">
+                      <i class="material-icons">add_circle_outline</i>
+                    </li>
+                    <li>1</li>
+                    <li class="remove">
+                      <i class="material-icons">remove_circle_outline</i>
+                    </li>
+                  </ul>
+                </footer>
+              </li>
+            </ul>
+          </main>
+          <footer>
+            <div class="finish">
+              <hr />
+              <div class="subtotal">
+                <p>Subtotal</p>
+                <span>R$ 40,00</span>
+              </div>
+              <div class="shipping">
+                <p>Taxa de entrega</p>
+                <span>R$ 10,00</span>
+              </div>
+              <div class="total">
+                <p>Total</p>
+                <span>R$ 50,00</span>
+              </div>
+              <a href="finish_order.html">
+                <button type="button">Concluir pedido</button>
+              </a>
+            </div>
+          </footer>
+        </div>
+      </div>
+    </main>
+
+    <div id="footer"></div>
+
+    <!-- Modal Structure -->
+
+    <div id="modal-basket" class="modal">
+        <header>
+          <h5>Cestinha (2)</h5>
+        </header>
+        <h6>Seu pedido</h6>
+        <main>
+          <ul class="basket-items">
+            <li>
+              <hr />
+              <header>
+                <ul>
+                  <li>
+                    <p>Sushi</p>
+                  </li>
+                  <li>
+                    <span>R$ 20,00</span>
+                  </li>
+                </ul>
+              </header>
+              <main>
+                <p>
+                  Loren ipsun alo teste um dois. Loren ipsun alo teste um
+                  dois.
+                </p>
+              </main>
+              <footer>
+                <ul>
+                  <li class="add">
+                    <i class="material-icons">add_circle_outline</i>
+                  </li>
+                  <li>1</li>
+                  <li class="remove">
+                    <i class="material-icons">remove_circle_outline</i>
+                  </li>
+                </ul>
+              </footer>
+            </li>
+            <li>
+              <hr />
+              <header>
+                <ul>
+                  <li>
+                    <p>Sushi</p>
+                  </li>
+                  <li>
+                    <span>R$ 20,00</span>
+                  </li>
+                </ul>
+              </header>
+              <main>
+                <p>
+                  Loren ipsun alo teste um dois. Loren ipsun alo teste um
+                  dois.
+                </p>
+              </main>
+              <footer>
+                <ul>
+                  <li class="add">
+                    <i class="material-icons">add_circle_outline</i>
+                  </li>
+                  <li>1</li>
+                  <li class="remove">
+                    <i class="material-icons">remove_circle_outline</i>
+                  </li>
+                </ul>
+              </footer>
+            </li>
+          </ul>
+        </main>
+        <footer>
+          <div class="finish">
+            <hr />
+            <div class="subtotal">
+              <p>Subtotal</p>
+              <span>R$ 40,00</span>
+            </div>
+            <div class="shipping">
+              <p>Taxa de entrega</p>
+              <span>R$ 10,00</span>
+            </div>
+            <div class="total">
+              <p>Total</p>
+              <span>R$ 50,00</span>
+            </div>
+            <a href="finish_order.html">
+              <button type="button">Concluir pedido</button>
+            </a>
+          </div>
+        </footer>
+    </div>
+
+    <div id="modal-signin" class="modal">
+      <div class="modal-content">
+        <div id="close">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">
+            <i class="material-icons">close</i>
+          </a>
+        </div>
+        <header>
+          <p>Informe seu email e senha para continuar</p>
+        </header>
+        <main>
+          <form action="">
+            <input
+              class="my-input"
+              type="text"
+              name="email"
+              placeholder="E-mail"
+            />
+            <input
+              class="my-input"
+              type="password"
+              name="password"
+              placeholder="Senha"
+            />
+            <div class="register-link">
+              <a class="modal-trigger modal-close" href="#modal-register"
+                >Ainda não sou cadastrado!</a
+              >
+            </div>
+            <a href="">
+              <button type="submit">ENTRAR</button>
+            </a>
+          </form>
+        </main>
+      </div>
+    </div>
+
+    <div id="modal-register" class="modal">
+      <div class="modal-content">
+        <div id="close">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">
+            <i class="material-icons">close</i>
+          </a>
+        </div>
+        <header>
+          <p>Faça seu cadastro</p>
+        </header>
+        <main>
+          <form action="">
+            <input
+              class="my-input"
+              type="email"
+              name="email"
+              placeholder="Seu e-mail"
+            />
+            <input
+              class="my-input"
+              type="text"
+              name="name"
+              placeholder="Seu nome completo"
+            />
+            <input
+              class="my-input"
+              type="text"
+              name="CPF"
+              placeholder="Seu CPF"
+            />
+            <input
+              class="my-input"
+              type="tel"
+              name="phone"
+              placeholder="Seu telefone"
+            />
+            <input
+              class="my-input"
+              type="password"
+              name="password"
+              placeholder="Senha"
+            />
+            <input
+              class="my-input"
+              type="password"
+              name="password-confirm"
+              placeholder="Confirmar senha"
+            />
+            <a href="">
+              <button type="button">CADASTRAR</button>
+            </a>
+          </form>
+        </main>
+      </div>
+    </div>
+
+    <div id="modal-edit-user" class="modal">
+      <div class="modal-content">
+        <div id="close">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">
+            <i class="material-icons">close</i>
+          </a>
+        </div>
+        <header>
+          <p>Alterar dados</p>
+        </header>
+        <main>
+          <form action="">
+              <input
+                class="my-input"
+                type="text"
+                name="name"
+                value="Beatriz de Almeida Fernandes de Lima"
+              />
+            <input
+              class="my-input"
+              type="email"
+              name="email"
+              value="beatriz@gmail.com"
+            />
+            <input
+              class="my-input"
+              type="text"
+              name="CPF"
+              value="1234679"
+            />
+            <input
+              class="my-input"
+              type="tel"
+              name="phone"
+              value="(42) 99977-8562"
+            />
+            <input
+              class="my-input"
+              type="password"
+              name="password"
+              value="Senha"
+            />
+            <input
+              class="my-input"
+              type="password"
+              name="password-confirm"
+              value="Senha"
+            />
+            <a href="">
+              <button type="button">SALVAR</button>
+            </a>
+          </form>
+        </main>
+      </div>
+    </div>
+
+    <script>
+      $(document).ready(function () {
+        $(".modal").modal();
+        $('select').formSelect();
+        $('.sidenav').sidenav();
+        $(".dropdown-trigger").dropdown();
+      });
+    </script>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script
+      type="text/javascript"
+      src="../../../assets/libraries/materialize/js/materialize.min.js"
+    ></script>
+  </body>
+</html>

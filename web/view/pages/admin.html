@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/resources/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <script src="../../assets/resources/jquery/jquery-3.4.1.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../../../assets/libraries/materialize/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../../../assets/libraries/materialize/css/materialize.css"  media="screen,projection"/>
+    
+    <link type="text/css" rel="stylesheet" href="../../../assets/resources/styles/style.css"  media="screen,projection"/>
+
+    <link rel="icon" type="image/png" href="../../assets/resources/images/Logo 28px.png"/>
+    <title>Administração | Yuugen Sushi</title>
+
+    <script>
+        $(function () {
+            $("#footer").load("../layout/footer.html");
+        });
+    </script>
+
+
+</head>
+
+<body id="admin-login-body" class="admin-body">
+
+    <nav>
+        <div class="my-navbar row">
+            <div class="col s4">
+                <img src="../../assets/resources/images/Logo 28px - preta.png" alt="Logo Yuugen Sushi">
+            </div>
+            <div class="col s4 title">Administração</div>
+            <div class="col s4"></div>
+        </div>
+    </nav>
+    
+    <main>
+        <div class="row">
+            <div class="col s1 m3 l4"></div>
+            <div class="signin col s10 m6 l4">
+                <header>
+                    <p>Entrar</p>
+                </header>
+                <main>
+                    <form action="">
+                        <input class="my-input" type="text" name="email" placeholder="E-mail">
+                        <input class="my-input" type="password" name="password" placeholder="Senha">
+                        <a href="dashboard.html">
+                            <button type="button">
+                                ENTRAR
+                            </button>
+                        </a>
+                    </form>
+                    
+                </main>
+            </div>
+            <div class="col s1 m3 l4"></div>
+        </div>
+    </main>
+
+    <div id="footer"></div>
+
+  <script>
+      $(document).ready(function(){
+            $('.modal').modal();
+        });
+  </script>
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="../../../assets/libraries/materialize/js/materialize.min.js"></script>
+</body>
+</html>

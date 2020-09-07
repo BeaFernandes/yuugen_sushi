@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../../assets/resources/font-awesome-4.7.0/css/font-awesome.min.css">
+
+    <script src="../../assets/resources/jquery/jquery-3.4.1.js"></script>
+
+    <link type="text/css" rel="stylesheet" href="../../../assets/libraries/materialize/css/materialize.min.css"  media="screen,projection"/>
+    <link type="text/css" rel="stylesheet" href="../../../assets/libraries/materialize/css/materialize.css"  media="screen,projection"/>
+    
+    <link type="text/css" rel="stylesheet" href="../../../assets/resources/styles/style.css"  media="screen,projection"/>
+
+    <link rel="icon" type="image/png" href="../../assets/resources/images/Logo 28px.png"/>
+    <title>Meus pedidos | Yuugen Sushi</title>
+
+    <script>
+        $(function () {
+            $("#footer").load("../layout/footer.html");
+        });
+    </script>
+
+
+</head>
+
+<body id="dashboard-body" class="admin-body">
+
+    <nav>
+        <div class="my-navbar row">
+          <div class="col s2 m4">
+            <a href="../pages/menu.html">
+              <img
+                src="../../assets/resources/images/Logo 28px - preta.png"
+                alt="Logo Yuugen Sushi"
+              />
+            </a>
+          </div>
+          <div class="title col s9 m4">
+            Meus pedidos
+          </div>
+          <div class="options col s1 m4">
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li class="waves-effect">
+                <a class="modal-trigger" href="#modal-basket">
+                  <i class="fa fa-shopping-basket" aria-hidden="true"></i>
+                  Cestinha
+                </a>
+              </li>
+  
+              <li >
+                <div class="">
+                  <a class="dropdown-trigger" data-target="dropdown-menu">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    Beatriz
+                  </a>
+        
+                  <ul id="dropdown-menu" class="dropdown-content">
+                    <li><a href="orders.html">Meus pedidos</a></li>
+                    <li><a class="modal-trigger" href="#modal-edit-user">Editar perfil</a></li>
+                    <li><a href="#!">Sair</a></li>
+                  </ul>
+                </div>
+              </li>
+            </ul>
+            <a href="#" data-target="slide-out" class="sidenav-trigger  show-on-medium-and-down"><i class="material-icons">menu</i></a>
+          </div>
+        </div>
+      </nav>
+    
+    <main>
+        <div class="row">
+            <div class="col"></div>
+
+            <div id="orders-table" class="col s12 m7">
+                <table class="striped">
+                    <thead>
+                        <tr>
+                            <th class="">Id pedido</th>
+                            <th class="">Hora do pedido</th>
+                            <th class="">Previsão da entrega</th>
+                            <th class="">Situação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>1456</td>
+                            <td>18:47</td>
+                            <td>18:47</td>
+                            <td>
+                                <div class="status pendant" id="1">Pendente</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1456</td>
+                            <td>18:47</td>
+                            <td>18:47</td>
+                            <td>
+                                <div class="status getting-ready" id="2">Em preparo</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1456</td>
+                            <td>18:47</td>
+                            <td>18:47</td>
+                            <td>
+                                <div class="status sent" id="3">Enviado</div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1456</td>
+                            <td>18:47</td>
+                            <td>18:47</td>
+                            <td>
+                                <div class="status delivered" id="4">Entregue</div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+            </div>
+
+            <div id="order" class="col s12 m4">
+                <div class="infos">
+                    <div class="status pendant">Pendente</div>
+                    <div class="info-square order">
+                        <header>
+                                Pedido #1456
+                        </header>
+                        <main>
+                            <p id="order-time" >Horário do pedido</p>
+                            <p id="oreder-deadline">Prazo estipulado</p>
+                        </main>
+                    </div>
+
+                    <div class="info-square address">
+                        <header>
+                            Endereço de entrega
+                        </header>
+                        <main>
+                            <p id="street" >Rua Emília F. da Cruz</p>
+                            <p id="cep">85015-633</p>
+                        </main>
+                    </div>
+
+                    <div class="info-square order-items">
+                        <header>
+                            Itens do pedido
+                        </header>
+                        <main>
+                            <div class="order-items">
+                                <div id="item1">
+                                    <p id="item-name">Sushi</p>
+                                    <span id="item-price">R$ 20,00</span>
+                                </div>
+                                <div id="item1">
+                                    <p id="item-name">Sushi</p>
+                                    <span id="item-price">R$ 20,00</span>
+                                </div>
+                            </div>
+                            <div class="price">
+                                <div class="subtotal">
+                                    <p>Subtotal</p>
+                                    <span>R$ 40,00</span>
+                                </div>
+                                <div class="shipping">
+                                    <p>Taxa de entrega</p>
+                                    <span>R$ 10,00</span>
+                                </div>
+                                <div class="total">
+                                    <p>Total</p>
+                                    <span>R$ 50,00</span>
+                                </div>
+                            </div>
+                        </main>
+                    </div>
+
+                    <div class="info-square payment">
+                        <header>
+                            Forma de pagamento
+                        </header>
+                        <main>
+                            <p id="payment-choice">Dinheiro</p>
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </main>
+
+    <div id="footer"></div>
+
+
+
+    <div id="modal-basket" class="modal">
+        <header>
+          <h5>Cestinha (2)</h5>
+        </header>
+        <h6>Seu pedido</h6>
+        <main>
+          <ul class="basket-items">
+            <li>
+              <hr />
+              <header>
+                <ul>
+                  <li>
+                    <p>Sushi</p>
+                  </li>
+                  <li>
+                    <span>R$ 20,00</span>
+                  </li>
+                </ul>
+              </header>
+              <main>
+                <p>
+                  Loren ipsun alo teste um dois. Loren ipsun alo teste um
+                  dois.
+                </p>
+              </main>
+              <footer>
+                <ul>
+                  <li class="add">
+                    <i class="material-icons">add_circle_outline</i>
+                  </li>
+                  <li>1</li>
+                  <li class="remove">
+                    <i class="material-icons">remove_circle_outline</i>
+                  </li>
+                </ul>
+              </footer>
+            </li>
+            <li>
+              <hr />
+              <header>
+                <ul>
+                  <li>
+                    <p>Sushi</p>
+                  </li>
+                  <li>
+                    <span>R$ 20,00</span>
+                  </li>
+                </ul>
+              </header>
+              <main>
+                <p>
+                  Loren ipsun alo teste um dois. Loren ipsun alo teste um
+                  dois.
+                </p>
+              </main>
+              <footer>
+                <ul>
+                  <li class="add">
+                    <i class="material-icons">add_circle_outline</i>
+                  </li>
+                  <li>1</li>
+                  <li class="remove">
+                    <i class="material-icons">remove_circle_outline</i>
+                  </li>
+                </ul>
+              </footer>
+            </li>
+          </ul>
+        </main>
+        <footer>
+          <div class="finish">
+            <hr />
+            <div class="subtotal">
+              <p>Subtotal</p>
+              <span>R$ 40,00</span>
+            </div>
+            <div class="shipping">
+              <p>Taxa de entrega</p>
+              <span>R$ 10,00</span>
+            </div>
+            <div class="total">
+              <p>Total</p>
+              <span>R$ 50,00</span>
+            </div>
+            <a href="finish_order.html">
+              <button type="button">Concluir pedido</button>
+            </a>
+          </div>
+        </footer>
+    </div>
+
+
+    <div id="modal-edit-user" class="modal">
+        <div class="modal-content">
+          <div id="close">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">
+              <i class="material-icons">close</i>
+            </a>
+          </div>
+          <header>
+            <p>Alterar dados</p>
+          </header>
+          <main>
+            <form action="">
+                <input
+                  class="my-input"
+                  type="text"
+                  name="name"
+                  value="Beatriz de Almeida Fernandes de Lima"
+                />
+              <input
+                class="my-input"
+                type="email"
+                name="email"
+                value="beatriz@gmail.com"
+              />
+              <input
+                class="my-input"
+                type="text"
+                name="CPF"
+                value="1234679"
+              />
+              <input
+                class="my-input"
+                type="tel"
+                name="phone"
+                value="(42) 99977-8562"
+              />
+              <input
+                class="my-input"
+                type="password"
+                name="password"
+                value="Senha"
+              />
+              <input
+                class="my-input"
+                type="password"
+                name="password-confirm"
+                value="Senha"
+              />
+              <a href="">
+                <button type="button">SALVAR</button>
+              </a>
+            </form>
+          </main>
+        </div>
+      </div>
+
+    <script>
+        $(document).ready(function(){
+            $('.modal').modal();
+            $('.dropdown-trigger').dropdown();
+        });
+
+    </script>
+
+
+    <!--JavaScript at end of body for optimized loading-->
+    <script type="text/javascript" src="../../../assets/libraries/materialize/js/materialize.min.js"></script>
+</body>
+</html>
